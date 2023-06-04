@@ -1,6 +1,6 @@
 # JS-Code-Snippets
 
-## JavaScript library that you can use to open a popup screen with a YouTube link on HTML websites
+## 1. JavaScript library that you can use to open a popup screen with a YouTube link on HTML websites
 
 ```javascript
 // Create a function to open the popup screen
