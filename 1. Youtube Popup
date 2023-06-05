@@ -2,27 +2,17 @@
 // By Sankar Srinivasan petra.srini@gmail.com
 
 function openPopup(youtubeLink) {
-
   // Create a new window with specific dimensions
-
   const width = 800;
-
   const height = 600;
-
   const left = (window.innerWidth - width) / 2;
-
   const top = (window.innerHeight - height) / 2;
-
   const options = `width=${width},height=${height},top=${top},left=${left}`;
 
   // Open the YouTube link in the new window
-
   window.open(youtubeLink, 'popup', options);
-
 }
 
 // Example usage
-
 const youtubeLink = 'https://www.youtube.com/watch?v=VIDEO_ID';
-
 openPopup(youtubeLink);
