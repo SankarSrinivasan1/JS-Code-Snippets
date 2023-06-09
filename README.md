@@ -1,4 +1,4 @@
-# JS-Code-Snippets
+# JS Code Snippets
 
 ## 1. JavaScript library that you can use to open a popup screen with a YouTube link on HTML websites
 
