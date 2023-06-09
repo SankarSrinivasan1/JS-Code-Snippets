@@ -49,3 +49,61 @@ To use this library in your HTML website, you need to include the JavaScript cod
 Replace `'https://www.youtube.com/watch?v=VIDEO_ID'` with the actual YouTube link you want to open in the popup screen.
 
 Note that modern web browsers often block popups by default, so the user may need to enable popups for your website or click on a browser notification to open the popup screen.
+*****
+
+## 2. Fetch any API 
+
+```javascript
+
+// Fetch data from an API
+
+fetch('https://api.example.com/data')
+
+  .then(response => {
+
+    if (!response.ok) {
+
+      throw new Error('Network response was not ok');
+
+    }
+
+    return response.json();
+
+  })
+
+  .then(data => {
+
+    console.log(data);
+
+    // Process the retrieved data
+
+  })
+
+  .catch(error => {
+
+    console.error('Error:', error);
+
+    // Handle the error
+
+  });
+
+```
+
+
+Use the `fetch()` function to make a request to the specified URL (`https://api.example.com/data` in this case).
+
+The `fetch()` function returns a promise that resolves to the `Response` object representing the server's response.
+
+Chain a `.then()` method to the promise, which takes a callback function to handle the successful response.
+
+Inside the callback function, check if the response was successful (`response.ok`). If not, throw an error.
+
+Call the `.json()` method on the response object to parse the response body as JSON. This method also returns a promise.
+
+Chain another `.then()` method to the promise, which takes a callback function to handle the parsed JSON data.
+
+Inside the callback function, access and process the retrieved data as needed.
+
+If any errors occur during the process, the `.catch()` method is called with an error object. The error is logged to the console, and you can handle the error appropriately.
+
+You can replace `https://api.example.com/data` with the actual API endpoint you want to fetch data from. Additionally, you can modify the code to handle different types of responses or error scenarios based on your specific requirements.
