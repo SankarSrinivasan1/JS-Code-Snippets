@@ -54,43 +54,25 @@ Note that modern web browsers often block popups by default, so the user may nee
 ## 2. Fetch any API 
 
 ```javascript
-
 // Fetch data from an API
-
 fetch('https://api.example.com/data')
-
   .then(response => {
-
     if (!response.ok) {
-
       throw new Error('Network response was not ok');
-
     }
-
     return response.json();
-
   })
-
   .then(data => {
-
     console.log(data);
-
     // Process the retrieved data
-
   })
-
   .catch(error => {
-
     console.error('Error:', error);
-
     // Handle the error
-
   });
-
 ```
 
-
-Use the `fetch()` function to make a request to the specified URL (`https://api.example.com/data` in this case).
+Use the `fetch()` function to make a request to the specified URL (`https://api.example.com/data` in this case). 
 
 The `fetch()` function returns a promise that resolves to the `Response` object representing the server's response.
 
