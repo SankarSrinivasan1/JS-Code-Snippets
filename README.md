@@ -93,6 +93,7 @@ You can replace `https://api.example.com/data` with the actual API endpoint you 
 
 ## Cross blockchain bridging 
 
+```javascript
 class SriXchain {
 
   constructor(network) {
@@ -198,5 +199,5 @@ sriXchain.crossChainCommunication("Ethereum", "Binance Smart Chain", "Hello!")
 sriXchain.setDefaultNetwork("Testnet");
 
 console.log(`Default network set to: ${sriXchain.network}`);
+```
 
-nnn
