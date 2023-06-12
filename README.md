@@ -89,3 +89,114 @@ Inside the callback function, access and process the retrieved data as needed.
 If any errors occur during the process, the `.catch()` method is called with an error object. The error is logged to the console, and you can handle the error appropriately.
 
 You can replace `https://api.example.com/data` with the actual API endpoint you want to fetch data from. Additionally, you can modify the code to handle different types of responses or error scenarios based on your specific requirements.
+*****
+
+## Cross blockchain bridging 
+
+class SriXchain {
+
+  constructor(network) {
+
+    this.network = network;
+
+  }
+
+  // Asset bridging function
+
+  async bridgeAsset(sourceNetwork, targetNetwork, asset) {
+
+    console.log(`Bridging ${asset} from ${sourceNetwork} to ${targetNetwork}`);
+
+    // Implement your logic here for bridging the asset from the source network to the target network
+
+    return new Promise((resolve, reject) => {
+
+      // Simulating a successful bridging process
+
+      resolve(`Asset ${asset} bridged from ${sourceNetwork} to ${targetNetwork}`);
+
+    });
+
+  }
+
+  // Atomic swap function
+
+  async atomicSwap(network1, asset1, network2, asset2) {
+
+    console.log(`Performing atomic swap between ${network1} and ${network2}`);
+
+    // Implement your logic here for atomic swaps between network1 and network2
+
+    return new Promise((resolve, reject) => {
+
+      // Simulating a successful atomic swap
+
+      resolve(`Atomic swap complete: ${asset1} from ${network1} to ${network2} swapped with ${asset2}`);
+
+    });
+
+  }
+
+  // Cross-chain communication protocol function
+
+  async crossChainCommunication(sourceNetwork, targetNetwork, message) {
+
+    console.log(`Sending message from ${sourceNetwork} to ${targetNetwork}: ${message}`);
+
+    // Implement your logic here for cross-chain communication between sourceNetwork and targetNetwork
+
+    return new Promise((resolve, reject) => {
+
+      // Simulating a successful communication
+
+      resolve(`Message sent from ${sourceNetwork} to ${targetNetwork}: ${message}`);
+
+    });
+
+  }
+
+  // Function for setting the default network
+
+  setDefaultNetwork(network) {
+
+    this.network = network;
+
+  }
+
+}
+
+// Usage example
+
+const sriXchain = new SriXchain("Mainnet");
+
+// Asset bridging example
+
+sriXchain.bridgeAsset("Ethereum", "Binance Smart Chain", "ETH")
+
+  .then((result) => console.log(result))
+
+  .catch((error) => console.error(error));
+
+// Atomic swap example
+
+sriXchain.atomicSwap("Ethereum", "ETH", "Binance Smart Chain", "BNB")
+
+  .then((result) => console.log(result))
+
+  .catch((error) => console.error(error));
+
+// Cross-chain communication example
+
+sriXchain.crossChainCommunication("Ethereum", "Binance Smart Chain", "Hello!")
+
+  .then((result) => console.log(result))
+
+  .catch((error) => console.error(error));
+
+// Set default network example
+
+sriXchain.setDefaultNetwork("Testnet");
+
+console.log(`Default network set to: ${sriXchain.network}`);
+
+nnn
