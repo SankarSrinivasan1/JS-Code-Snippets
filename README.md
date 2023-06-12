@@ -91,7 +91,7 @@ If any errors occur during the process, the `.catch()` method is called with an 
 You can replace `https://api.example.com/data` with the actual API endpoint you want to fetch data from. Additionally, you can modify the code to handle different types of responses or error scenarios based on your specific requirements.
 *****
 
-## Cross blockchain bridging 
+## 3. Cross blockchain bridging 
 
 ```javascript
 class SriXchain {
@@ -201,3 +201,144 @@ sriXchain.setDefaultNetwork("Testnet");
 console.log(`Default network set to: ${sriXchain.network}`);
 ```
 
+SriXchain Library: Cross-Chain Interactions
+
+User
+
+write code SriXchain.js: A js library that facilitates cross-chain interactions between different blockchain networks. It could provide functions for asset bridging, atomic swaps, and cross-chain communication protocols. This library would enable developers to build applications that can seamlessly interact with multiple blockchains.
+
+ChatGPT
+
+Certainly! Here's an example implementation of the SriXchain.js library that provides functions for asset bridging, atomic swaps, and cross-chain communication protocols:
+
+javascript
+
+Copy code
+
+class SriXchain {
+
+  constructor(network) {
+
+    this.network = network;
+
+  }
+
+  // Asset bridging function
+
+  async bridgeAsset(sourceNetwork, targetNetwork, asset) {
+
+    // Implement your logic here for bridging the asset from the source network to the target network
+
+    console.log(`Bridging ${asset} from ${sourceNetwork} to ${targetNetwork}`);
+
+    // ...
+
+    // Return a promise indicating the completion of the bridging process
+
+    return new Promise((resolve, reject) => {
+
+      // Simulating a delay of 2 seconds
+
+      setTimeout(() => {
+
+        resolve(`Asset ${asset} bridged from ${sourceNetwork} to ${targetNetwork}`);
+
+      }, 2000);
+
+    });
+
+  }
+
+  // Atomic swap function
+
+  async atomicSwap(network1, asset1, network2, asset2) {
+
+    // Implement your logic here for atomic swaps between network1 and network2
+
+    console.log(`Performing atomic swap between ${network1} and ${network2}`);
+
+    // ...
+
+    // Return a promise indicating the completion of the atomic swap
+
+    return new Promise((resolve, reject) => {
+
+      // Simulating a delay of 3 seconds
+
+      setTimeout(() => {
+
+        resolve(`Atomic swap complete: ${asset1} from ${network1} to ${network2} swapped with ${asset2}`);
+
+      }, 3000);
+
+    });
+
+  }
+
+  // Cross-chain communication protocol function
+
+  async crossChainCommunication(sourceNetwork, targetNetwork, message) {
+
+    // Implement your logic here for cross-chain communication between sourceNetwork and targetNetwork
+
+    console.log(`Sending message from ${sourceNetwork} to ${targetNetwork}: ${message}`);
+
+    // ...
+
+    // Return a promise indicating the completion of the communication
+
+    return new Promise((resolve, reject) => {
+
+      // Simulating a delay of 1 second
+
+      setTimeout(() => {
+
+        resolve(`Message sent from ${sourceNetwork} to ${targetNetwork}: ${message}`);
+
+      }, 1000);
+
+    });
+
+  }
+
+}
+
+// Usage example
+
+const sriXchain = new SriXchain("Mainnet");
+
+// Asset bridging example
+
+sriXchain.bridgeAsset("Ethereum", "Binance Smart Chain", "ETH")
+
+  .then((result) => console.log(result))
+
+  .catch((error) => console.error(error));
+
+// Atomic swap example
+
+sriXchain.atomicSwap("Ethereum", "ETH", "Binance Smart Chain", "BNB")
+
+  .then((result) => console.log(result))
+
+  .catch((error) => console.error(error));
+
+// Cross-chain communication example
+
+sriXchain.crossChainCommunication("Ethereum", "Binance Smart Chain", "Hello!")
+
+  .then((result) => console.log(result))
+
+  .catch((error) => console.error(error));
+
+In this code, the `SriXchain` class represents the SriXchain library. It takes the `network` parameter in the constructor to specify the default network for the library.
+
+The class provides three functions: `bridgeAsset`, `atomicSwap`, and `crossChainCommunication`. Each function simulates the respective cross-chain interaction with a delay using `setTimeout`. You can replace the implementation of these functions with the actual logic required for interacting with different blockchain networks.
+
+To use the library, create an instance of `SriXchain` with the default network. Then, you can call the provided functions with the necessary parameters. Each function returns a promise that resolves when the operation is complete. You can handle the results and errors using `.then()` and `.catch()`.
+
+Feel free to replace the placeholder implementation in each function with your own logic for interacting with blockchain networks. For example, you can use appropriate blockchain APIs or libraries to perform asset bridging, atomic swaps, or cross-chain communication.
+
+Remember to include any required dependencies or import statements in your actual code before using the `SriXchain` class.
+
+Please note that the code provided is a simplified example and may need to be adapted to fit your specific use case and the blockchain networks you are working with.
