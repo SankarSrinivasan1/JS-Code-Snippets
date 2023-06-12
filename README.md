@@ -235,3 +235,11 @@ Feel free to replace the placeholder implementation in each function with your o
 Remember to include any required dependencies or import statements in your actual code before using the `SriXchain` class.
 
 Please note that the code provided is a simplified example and may need to be adapted to fit your specific use case and the blockchain networks you are working with.
+
+An additional function `setDefaultNetwork(network)` is added to the `SriXchain` class. This function allows you to set the default network for the library.
+
+After creating an instance of `SriXchain`, you can call the `setDefaultNetwork(network)` function to set the default network. The updated default network value can be accessed using the `network` property of the `SriXchain` instance.
+
+The example demonstrates how to use the `setDefaultNetwork(network)` function by setting the default network to "Testnet" and then logging the updated default network value.
+
+Feel free to customize and extend the code according to your specific requirements.
