@@ -72,19 +72,13 @@ fetch('https://api.example.com/data')
   });
 ```
 
-Use the `fetch()` function to make a request to the specified URL (`https://api.example.com/data` in this case). 
-
-The `fetch()` function returns a promise that resolves to the `Response` object representing the server's response.
-
-Chain a `.then()` method to the promise, which takes a callback function to handle the successful response.
-
-Inside the callback function, check if the response was successful (`response.ok`). If not, throw an error.
-
-Call the `.json()` method on the response object to parse the response body as JSON. This method also returns a promise.
-
-Chain another `.then()` method to the promise, which takes a callback function to handle the parsed JSON data.
-
-Inside the callback function, access and process the retrieved data as needed.
+- Use the `fetch()` function to make a request to the specified URL (`https://api.example.com/data` in this case). 
+- The `fetch()` function returns a promise that resolves to the `Response` object representing the server's response.
+- Chain a `.then()` method to the promise, which takes a callback function to handle the successful response.
+= Inside the callback function, check if the response was successful (`response.ok`). If not, throw an error.
+- Call the `.json()` method on the response object to parse the response body as JSON. This method also returns a promise.
+= Chain another `.then()` method to the promise, which takes a callback function to handle the parsed JSON data.
+= Inside the callback function, access and process the retrieved data as needed.
 
 If any errors occur during the process, the `.catch()` method is called with an error object. The error is logged to the console, and you can handle the error appropriately.
 
@@ -95,135 +89,74 @@ You can replace `https://api.example.com/data` with the actual API endpoint you 
 
 ```javascript
 class SriXchain {
-
   constructor(network) {
-
     this.network = network;
-
   }
 
   // Asset bridging function
-
   async bridgeAsset(sourceNetwork, targetNetwork, asset) {
-
     console.log(`Bridging ${asset} from ${sourceNetwork} to ${targetNetwork}`);
 
     // Implement your logic here for bridging the asset from the source network to the target network
-
     return new Promise((resolve, reject) => {
 
       // Simulating a successful bridging process
-
       resolve(`Asset ${asset} bridged from ${sourceNetwork} to ${targetNetwork}`);
-
     });
-
   }
 
   // Atomic swap function
-
   async atomicSwap(network1, asset1, network2, asset2) {
-
     console.log(`Performing atomic swap between ${network1} and ${network2}`);
 
     // Implement your logic here for atomic swaps between network1 and network2
-
     return new Promise((resolve, reject) => {
 
       // Simulating a successful atomic swap
-
       resolve(`Atomic swap complete: ${asset1} from ${network1} to ${network2} swapped with ${asset2}`);
-
     });
-
   }
 
   // Cross-chain communication protocol function
-
   async crossChainCommunication(sourceNetwork, targetNetwork, message) {
-
     console.log(`Sending message from ${sourceNetwork} to ${targetNetwork}: ${message}`);
 
     // Implement your logic here for cross-chain communication between sourceNetwork and targetNetwork
-
     return new Promise((resolve, reject) => {
 
       // Simulating a successful communication
-
       resolve(`Message sent from ${sourceNetwork} to ${targetNetwork}: ${message}`);
-
     });
-
   }
 
   // Function for setting the default network
-
   setDefaultNetwork(network) {
-
     this.network = network;
-
   }
-
 }
 
-// Usage example
+## Usage example
 
 const sriXchain = new SriXchain("Mainnet");
-
 // Asset bridging example
-
 sriXchain.bridgeAsset("Ethereum", "Binance Smart Chain", "ETH")
-
   .then((result) => console.log(result))
-
   .catch((error) => console.error(error));
 
 // Atomic swap example
-
 sriXchain.atomicSwap("Ethereum", "ETH", "Binance Smart Chain", "BNB")
-
   .then((result) => console.log(result))
-
   .catch((error) => console.error(error));
 
 // Cross-chain communication example
-
 sriXchain.crossChainCommunication("Ethereum", "Binance Smart Chain", "Hello!")
-
   .then((result) => console.log(result))
-
   .catch((error) => console.error(error));
 
 // Set default network example
-
 sriXchain.setDefaultNetwork("Testnet");
-
 console.log(`Default network set to: ${sriXchain.network}`);
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-   
-
-
-
-
-
-
-
 In this code, the `SriXchain` class represents the SriXchain library. It takes the `network` parameter in the constructor to specify the default network for the library.
 
 The class provides three functions: `bridgeAsset`, `atomicSwap`, and `crossChainCommunication`. Each function simulates the respective cross-chain interaction with a delay using `setTimeout`. You can replace the implementation of these functions with the actual logic required for interacting with different blockchain networks.
@@ -232,11 +165,7 @@ To use the library, create an instance of `SriXchain` with the default network. 
 
 Feel free to replace the placeholder implementation in each function with your own logic for interacting with blockchain networks. For example, you can use appropriate blockchain APIs or libraries to perform asset bridging, atomic swaps, or cross-chain communication.
 
-Remember to include any required dependencies or import statements in your actual code before using the `SriXchain` class.
-
-Please note that the code provided is a simplified example and may need to be adapted to fit your specific use case and the blockchain networks you are working with.
-
-An additional function `setDefaultNetwork(network)` is added to the `SriXchain` class. This function allows you to set the default network for the library.
+Remember to include any required dependencies or import statements in your actual code before using the `SriXchain` class. Please note that the code provided is a simplified example and may need to be adapted to fit your specific use case and the blockchain networks you are working with. An additional function `setDefaultNetwork(network)` is added to the `SriXchain` class. This function allows you to set the default network for the library.
 
 After creating an instance of `SriXchain`, you can call the `setDefaultNetwork(network)` function to set the default network. The updated default network value can be accessed using the `network` property of the `SriXchain` instance.
 
