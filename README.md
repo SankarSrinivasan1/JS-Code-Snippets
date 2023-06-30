@@ -172,3 +172,47 @@ After creating an instance of `SriXchain`, you can call the `setDefaultNetwork(n
 The example demonstrates how to use the `setDefaultNetwork(network)` function by setting the default network to "Testnet" and then logging the updated default network value.
 
 Feel free to customize and extend the code according to your specific requirements.
+
+## Scrap email addresses from any websites
+```javascript
+// HTML:
+// <input id="urlInput" type="text" placeholder="Enter website URL">
+// <button id="scrapeButton">Scrape Emails</button>
+// <div id="output"></div>
+
+// JavaScript:
+function scrapeEmails() {
+  const urlInput = document.getElementById('urlInput');
+  const output = document.getElementById('output');
+
+  const url = urlInput.value;
+  if (!url) {
+    output.innerHTML = 'Please enter a website URL.';
+    return;
+  }
+
+  fetch(url)
+    .then(response => response.text())
+    .then(html => {
+      const regex = /[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+      const emails = html.match(regex);
+
+      if (emails && emails.length > 0) {
+        output.innerHTML = '<h3>Email Addresses:</h3>' + emails.join('<br>');
+      } else {
+        output.innerHTML = 'No email addresses found on the webpage.';
+      }
+    })
+    .catch(error => {
+      output.innerHTML = 'An error occurred while scraping the webpage.';
+      console.error(error);
+    });
+}
+
+const scrapeButton = document.getElementById('scrapeButton');
+scrapeButton.addEventListener('click', scrapeEmails);
+```
+
+To use this code snippet, you'll need to add the HTML code to your webpage and include the JavaScript code in a `<script>` tag or an external JavaScript file. The library retrieves the website URL entered by the user, sends a `fetch` request to that URL, and searches for email addresses using a regular expression. The results are then displayed in the `output` div element.
+
+Please note that web scraping can be subject to legal restrictions and terms of service of the websites being scraped. It's important to ensure that you have the necessary permissions and adhere to ethical practices when scraping websites.
