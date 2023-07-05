@@ -1,6 +1,6 @@
 # JS Code Snippets
 
-## 1. Open a popup screen with a YouTube link on HTML websites
+## Open a popup screen with a YouTube link on HTML websites
 
 ```javascript
 // Create a function to open the popup screen
@@ -51,7 +51,7 @@ Replace `'https://www.youtube.com/watch?v=VIDEO_ID'` with the actual YouTube lin
 Note that modern web browsers often block popups by default, so the user may need to enable popups for your website or click on a browser notification to open the popup screen.
 *****
 
-## 2. Fetch any API 
+## Fetch any API 
 
 ```javascript
 // Fetch data from an API
@@ -85,7 +85,7 @@ If any errors occur during the process, the `.catch()` method is called with an 
 You can replace `https://api.example.com/data` with the actual API endpoint you want to fetch data from. Additionally, you can modify the code to handle different types of responses or error scenarios based on your specific requirements.
 *****
 
-## 3. Cross blockchain bridging 
+## Cross blockchain bridging 
 
 ```javascript
 class SriXchain {
@@ -216,3 +216,32 @@ scrapeButton.addEventListener('click', scrapeEmails);
 To use this code snippet, you'll need to add the HTML code to your webpage and include the JavaScript code in a `<script>` tag or an external JavaScript file. The library retrieves the website URL entered by the user, sends a `fetch` request to that URL, and searches for email addresses using a regular expression. The results are then displayed in the `output` div element.
 
 Please note that web scraping can be subject to legal restrictions and terms of service of the websites being scraped. It's important to ensure that you have the necessary permissions and adhere to ethical practices when scraping websites.
+
+## Display IP address at bottom centre of website 
+```javascript
+// Create a function to fetch the IP address
+function getIPAddress() {
+  fetch('https://api.ipify.org/?format=json')
+    .then(response => response.json())
+    .then(data => {
+      const ipAddress = data.ip;
+      // Display the IP address at the bottom of the screen
+      const ipAddressElement = document.createElement('div');
+      ipAddressElement.textContent = `IP Address: ${ipAddress}`;
+      ipAddressElement.style.position = 'fixed';
+      ipAddressElement.style.bottom = '0';
+      ipAddressElement.style.left = '0';
+      ipAddressElement.style.padding = '10px';
+      ipAddressElement.style.backgroundColor = '#000';
+      ipAddressElement.style.color = '#fff';
+      ipAddressElement.style.fontFamily = 'Arial, sans-serif';
+      document.body.appendChild(ipAddressElement);
+    })
+    .catch(error => console.error(error));
+}
+
+// Call the function to get and display the IP address
+getIPAddress();
+```
+
+This code uses the `fetch` API to retrieve the IP address from the ipify API in JSON format. It then creates a `div` element, sets its text content to the IP address, and applies some basic styling to make it visible at the bottom of the screen. Finally, the `div` element is appended to the `body` of the HTML document.
